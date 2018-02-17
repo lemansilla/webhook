@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.dtolabs.rundeck.plugin.notificationplugin.NotificationTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.dtolabs.rundeck.plugin.notificationplugin.NotificationTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.dtolabs.rundeck.plugin.notificationplugin.html">com.dtolabs.rundeck.plugin.notificationplugin</a> &gt; NotificationTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.920s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testPostJsonNotification</td>
+<td>0.268s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPostXMLNotification</td>
+<td>0.652s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+&lt;notification executionId=&quot;0&quot; status=&quot;running&quot; trigger=&quot;onstart&quot;&gt;
+    &lt;executions&gt;
+        &lt;execution id=&quot;2&quot;&gt;
+            &lt;user&gt;Uncle Bob&lt;/user&gt;
+            &lt;datestarted&gt;
+                &lt;date&gt;2018-02-12T19:27:14Z&lt;/date&gt;
+                &lt;unixtime&gt;1518010034940&lt;/unixtime&gt;
+            &lt;/datestarted&gt;
+            &lt;job id=&quot;de70dbd0-21dc-4d90-ab2a-86f60a98ebc8&quot;&gt;
+                &lt;name&gt;firstjob&lt;/name&gt;
+                &lt;group&gt;coders&lt;/group&gt;
+                &lt;project&gt;webhook&lt;/project&gt;
+                &lt;description&gt;first attempt&lt;/description&gt;
+            &lt;/job&gt;
+            &lt;description&gt;OK&lt;/description&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/notification&gt;
+&gt;&gt;&gt;Notification was delivered:  200 OK
+{
+  &quot;args&quot;: {}, 
+  &quot;data&quot;: &quot;&lt;notification executionId=\&quot;0\&quot; status=\&quot;running\&quot; trigger=\&quot;onstart\&quot;&gt;\n    &lt;executions&gt;\n        &lt;execution id=\&quot;2\&quot;&gt;\n            &lt;user&gt;Uncle Bob&lt;/user&gt;\n            &lt;datestarted&gt;\n                &lt;date&gt;2018-02-12T19:27:14Z&lt;/date&gt;\n                &lt;unixtime&gt;1518010034940&lt;/unixtime&gt;\n            &lt;/datestarted&gt;\n            &lt;job id=\&quot;de70dbd0-21dc-4d90-ab2a-86f60a98ebc8\&quot;&gt;\n                &lt;name&gt;firstjob&lt;/name&gt;\n                &lt;group&gt;coders&lt;/group&gt;\n                &lt;project&gt;webhook&lt;/project&gt;\n                &lt;description&gt;first attempt&lt;/description&gt;\n            &lt;/job&gt;\n            &lt;description&gt;OK&lt;/description&gt;\n        &lt;/execution&gt;\n    &lt;/executions&gt;\n&lt;/notification&gt;&quot;, 
+  &quot;files&quot;: {}, 
+  &quot;form&quot;: {}, 
+  &quot;headers&quot;: {
+    &quot;Accept&quot;: &quot;text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2&quot;, 
+    &quot;Connection&quot;: &quot;close&quot;, 
+    &quot;Content-Length&quot;: &quot;650&quot;, 
+    &quot;Content-Type&quot;: &quot;application/xml&quot;, 
+    &quot;Host&quot;: &quot;httpbin.org&quot;, 
+    &quot;User-Agent&quot;: &quot;Java/1.8.0_144&quot;
+  }, 
+  &quot;json&quot;: null, 
+  &quot;origin&quot;: &quot;201.239.183.94&quot;, 
+  &quot;url&quot;: &quot;http://httpbin.org/post&quot;
+}
+{&quot;trigger&quot;:&quot;onstart&quot;,&quot;status&quot;:&quot;running&quot;,&quot;executionId&quot;:0,&quot;executions&quot;:{&quot;execution&quot;:{&quot;id&quot;:&quot;2&quot;,&quot;user&quot;:&quot;Uncle Bob&quot;,&quot;datestarted&quot;:{&quot;date&quot;:&quot;2018-02-12T19:27:14Z&quot;,&quot;unixtime&quot;:&quot;1518010034940&quot;},&quot;job&quot;:{&quot;id&quot;:&quot;de70dbd0-21dc-4d90-ab2a-86f60a98ebc8&quot;,&quot;name&quot;:&quot;firstjob&quot;,&quot;group&quot;:&quot;coders&quot;,&quot;project&quot;:&quot;webhook&quot;,&quot;description&quot;:&quot;first attempt&quot;},&quot;description&quot;:&quot;OK&quot;}}}
+&gt;&gt;&gt;Notification was delivered:  200 OK
+{
+  &quot;args&quot;: {}, 
+  &quot;data&quot;: &quot;{\&quot;trigger\&quot;:\&quot;onstart\&quot;,\&quot;status\&quot;:\&quot;running\&quot;,\&quot;executionId\&quot;:0,\&quot;executions\&quot;:{\&quot;execution\&quot;:{\&quot;id\&quot;:\&quot;2\&quot;,\&quot;user\&quot;:\&quot;Uncle Bob\&quot;,\&quot;datestarted\&quot;:{\&quot;date\&quot;:\&quot;2018-02-12T19:27:14Z\&quot;,\&quot;unixtime\&quot;:\&quot;1518010034940\&quot;},\&quot;job\&quot;:{\&quot;id\&quot;:\&quot;de70dbd0-21dc-4d90-ab2a-86f60a98ebc8\&quot;,\&quot;name\&quot;:\&quot;firstjob\&quot;,\&quot;group\&quot;:\&quot;coders\&quot;,\&quot;project\&quot;:\&quot;webhook\&quot;,\&quot;description\&quot;:\&quot;first attempt\&quot;},\&quot;description\&quot;:\&quot;OK\&quot;}}}&quot;, 
+  &quot;files&quot;: {}, 
+  &quot;form&quot;: {}, 
+  &quot;headers&quot;: {
+    &quot;Accept&quot;: &quot;text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2&quot;, 
+    &quot;Connection&quot;: &quot;close&quot;, 
+    &quot;Content-Length&quot;: &quot;342&quot;, 
+    &quot;Content-Type&quot;: &quot;application/json&quot;, 
+    &quot;Host&quot;: &quot;httpbin.org&quot;, 
+    &quot;User-Agent&quot;: &quot;Java/1.8.0_144&quot;
+  }, 
+  &quot;json&quot;: {
+    &quot;executionId&quot;: 0, 
+    &quot;executions&quot;: {
+      &quot;execution&quot;: {
+        &quot;datestarted&quot;: {
+          &quot;date&quot;: &quot;2018-02-12T19:27:14Z&quot;, 
+          &quot;unixtime&quot;: &quot;1518010034940&quot;
+        }, 
+        &quot;description&quot;: &quot;OK&quot;, 
+        &quot;id&quot;: &quot;2&quot;, 
+        &quot;job&quot;: {
+          &quot;description&quot;: &quot;first attempt&quot;, 
+          &quot;group&quot;: &quot;coders&quot;, 
+          &quot;id&quot;: &quot;de70dbd0-21dc-4d90-ab2a-86f60a98ebc8&quot;, 
+          &quot;name&quot;: &quot;firstjob&quot;, 
+          &quot;project&quot;: &quot;webhook&quot;
+        }, 
+        &quot;user&quot;: &quot;Uncle Bob&quot;
+      }
+    }, 
+    &quot;status&quot;: &quot;running&quot;, 
+    &quot;trigger&quot;: &quot;onstart&quot;
+  }, 
+  &quot;origin&quot;: &quot;201.239.183.94&quot;, 
+  &quot;url&quot;: &quot;http://httpbin.org/post&quot;
+}
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 3.5-rc-2</a> at 15-02-2018 21:40:55</p>
+</div>
+</div>
+</body>
+</html>

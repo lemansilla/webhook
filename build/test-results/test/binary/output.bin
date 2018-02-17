@@ -1,0 +1,78 @@
+
+B<notification executionId="0" status="running" trigger="onstart">
+    <executions>
+        <execution id="2">
+#            <user>Uncle Bob</user>
+            <datestarted>
+2                <date>2018-02-12T19:27:14Z</date>
+3                <unixtime>1518010034940</unixtime>
+            </datestarted>
+<            <job id="de70dbd0-21dc-4d90-ab2a-86f60a98ebc8">
+&                <name>firstjob</name>
+&                <group>coders</group>
++                <project>webhook</project>
+9                <description>first attempt</description>
+            </job>
+*            <description>OK</description>
+        </execution>
+    </executions>
+</notification>
+'>>>Notification was delivered:  200 OK
+{
+  "args": {}, 
+µ  "data": "<notification executionId=\"0\" status=\"running\" trigger=\"onstart\">\n    <executions>\n        <execution id=\"2\">\n            <user>Uncle Bob</user>\n            <datestarted>\n                <date>2018-02-12T19:27:14Z</date>\n                <unixtime>1518010034940</unixtime>\n            </datestarted>\n            <job id=\"de70dbd0-21dc-4d90-ab2a-86f60a98ebc8\">\n                <name>firstjob</name>\n                <group>coders</group>\n                <project>webhook</project>\n                <description>first attempt</description>\n            </job>\n            <description>OK</description>\n        </execution>\n    </executions>\n</notification>", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+H    "Accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2", 
+    "Connection": "close", 
+    "Content-Length": "650", 
+)    "Content-Type": "application/xml", 
+    "Host": "httpbin.org", 
+$    "User-Agent": "Java/1.8.0_144"
+  }, 
+  "json": null, 
+   "origin": "201.239.183.94", 
+$  "url": "http://httpbin.org/post"
+}
+Ø{"trigger":"onstart","status":"running","executionId":0,"executions":{"execution":{"id":"2","user":"Uncle Bob","datestarted":{"date":"2018-02-12T19:27:14Z","unixtime":"1518010034940"},"job":{"id":"de70dbd0-21dc-4d90-ab2a-86f60a98ebc8","name":"firstjob","group":"coders","project":"webhook","description":"first attempt"},"description":"OK"}}}
+'>>>Notification was delivered:  200 OK
+{
+  "args": {}, 
+   "data": "{\"trigger\":\"onstart\",\"status\":\"running\",\"executionId\":0,\"executions\":{\"execution\":{\"id\":\"2\",\"user\":\"Uncle Bob\",\"datestarted\":{\"date\":\"2018-02-12T19:27:14Z\",\"unixtime\":\"1518010034940\"},\"job\":{\"id\":\"de70dbd0-21dc-4d90-ab2a-86f60a98ebc8\",\"name\":\"firstjob\",\"group\":\"coders\",\"project\":\"webhook\",\"description\":\"first attempt\"},\"description\":\"OK\"}}}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+H    "Accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2", 
+    "Connection": "close", 
+    "Content-Length": "342", 
+*    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+$    "User-Agent": "Java/1.8.0_144"
+  }, 
+  "json": {
+    "executionId": 0, 
+    "executions": {
+      "execution": {
+        "datestarted": {
+,          "date": "2018-02-12T19:27:14Z", 
+'          "unixtime": "1518010034940"
+        }, 
+        "description": "OK", 
+        "id": "2", 
+        "job": {
+,          "description": "first attempt", 
+          "group": "coders", 
+:          "id": "de70dbd0-21dc-4d90-ab2a-86f60a98ebc8", 
+           "name": "firstjob", 
+           "project": "webhook"
+        }, 
+        "user": "Uncle Bob"
+	      }
+	    }, 
+    "status": "running", 
+    "trigger": "onstart"
+  }, 
+   "origin": "201.239.183.94", 
+$  "url": "http://httpbin.org/post"
+}
