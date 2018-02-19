@@ -15,10 +15,20 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.Map;
 
+/**
+ * Main implementation of the plugin interface.
+ */
 //@Plugin(service="Notification",name="NotificationPlugin")
 //@PluginDescription(title="Notification Plugin", description="A Plugin for Rundeck Notifications.")
 public class ImplNotificationPlugin implements NotificationPlugin {
 
+    /**
+     * Interface method implementation
+     * @param trigger event type causing notification
+     * @param executionData execution data
+     * @param config notification configuration
+     * @return Boolean indicating success (true) or failure (false)
+     */
     public boolean postNotification(String trigger, Map executionData, Map config) {
 
         String input = "";
@@ -75,6 +85,11 @@ public class ImplNotificationPlugin implements NotificationPlugin {
     return bool;
     }
 
+    /**
+     *
+     * @param execution - this correspond to the information about the Job and Execution for the notification
+     * @return This is the class model to be used in the XML and JSON generation
+     */
     private NotificationModel createNotificationObject(final Map<Object, String> execution) {
 
         Job job = new Job();
@@ -106,6 +121,11 @@ public class ImplNotificationPlugin implements NotificationPlugin {
         return notifModel;
     }
 
+    /**
+     * This method creates an XML String from the class notification model
+     * @param notifModel class model
+     * @return - XML String
+     */
     private String createXMLNotification(NotificationModel notifModel){
 
         String xmlString = "";
@@ -129,6 +149,11 @@ public class ImplNotificationPlugin implements NotificationPlugin {
     return xmlString;
     }
 
+    /**
+     * This method creates a JSON String from the class notification model
+     * @param notifModel class model
+     * @return - JSON String|
+     */
     private String createJsonNotification(NotificationModel notifModel) {
 
         //String jsonString = "";
