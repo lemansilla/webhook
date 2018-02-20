@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.dtolabs.rundeck.plugin.notificationplugin.NotificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-02-16T00:40:54" hostname="hp2" time="0.92">
+<testsuite name="com.dtolabs.rundeck.plugin.notificationplugin.NotificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-02-19T19:07:40" hostname="hp2" time="1.601">
   <properties/>
-  <testcase name="testPostXMLNotification" classname="com.dtolabs.rundeck.plugin.notificationplugin.NotificationTest" time="0.652"/>
-  <testcase name="testPostJsonNotification" classname="com.dtolabs.rundeck.plugin.notificationplugin.NotificationTest" time="0.268"/>
+  <testcase name="testPostXMLNotification" classname="com.dtolabs.rundeck.plugin.notificationplugin.NotificationTest" time="1.268"/>
+  <testcase name="testPostJsonNotification" classname="com.dtolabs.rundeck.plugin.notificationplugin.NotificationTest" time="0.333"/>
   <system-out><![CDATA[
 <notification executionId="0" status="running" trigger="onstart">
     <executions>

@@ -56,8 +56,6 @@
       <file leaf-file-name="ImplNotificationPlugin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dtolabs/rundeck/plugin/notificationplugin/ImplNotificationPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2618">
-              <caret line="154" column="29" lean-forward="false" selection-start-line="154" selection-start-column="29" selection-end-line="154" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,8 +66,8 @@
       <file leaf-file-name="NotificationTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/dtolabs/rundeck/plugin/notificationplugin/NotificationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="63" column="37" lean-forward="false" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
+            <state relative-caret-position="1241">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -406,6 +404,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dtolabs/rundeck/plugin/notificationplugin/Execution.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dtolabs/rundeck/plugin/notificationplugin/DateStarted.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dtolabs/rundeck/plugin/notificationplugin/ImplNotificationPlugin.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/dtolabs/rundeck/plugin/notificationplugin/NotificationTest.java" />
       </list>
     </option>
   </component>
@@ -444,6 +443,32 @@
               <item name="webhook" type="b2602c69:ProjectViewProjectNode" />
               <item name="webhook" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
+            <path>
+              <item name="webhook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webhook" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webhook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webhook" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="webhook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webhook" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webhook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webhook" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="notificationplugin" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -473,7 +498,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.webhook [build]">
+  <component name="RunManager" selected="JUnit.NotificationTest (1)">
     <configuration name="NotificationTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -524,33 +549,55 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="PostNotification" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="PostNotification" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration name="NotificationTest.noURLInputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.dtolabs.rundeck.plugin.notificationplugin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="webhook_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="com.dtolabs.rundeck.plugin.notificationplugin" />
+      <option name="MAIN_CLASS_NAME" value="com.dtolabs.rundeck.plugin.notificationplugin.NotificationTest" />
+      <option name="METHOD_NAME" value="noURLInputTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="webhook_main" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
     </configuration>
-    <configuration name="RunPlugin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.dtolabs.rundeck.execution.notificationplugin.RunPlugin" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration name="NotificationTest.testPostXMLNotification" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.dtolabs.rundeck.plugin.notificationplugin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="webhook_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="com.dtolabs.rundeck.plugin.notificationplugin" />
+      <option name="MAIN_CLASS_NAME" value="com.dtolabs.rundeck.plugin.notificationplugin.NotificationTest" />
+      <option name="METHOD_NAME" value="testPostXMLNotification" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="webhook_main" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
@@ -650,19 +697,19 @@
       </ExternalSystemSettings>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.PostNotification" />
-      <item index="1" class="java.lang.String" itemvalue="Application.RunPlugin" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.NotificationTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NotificationTest (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Gradle.webhook [build]" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.NotificationTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.NotificationTest (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.webhook [build]" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.NotificationTest.testPostXMLNotification" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NotificationTest.noURLInputTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.webhook [build]" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.NotificationTest (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.NotificationTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.RunPlugin" />
-        <item index="4" class="java.lang.String" itemvalue="Application.PostNotification" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NotificationTest (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.NotificationTest.testPostXMLNotification" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NotificationTest.noURLInputTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.NotificationTest" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.webhook [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -683,53 +730,55 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NotificationTest - 2018.02.15 at 17h 57m 56s.xml">
+    <history-entry file="NotificationTest - 2018.02.19 at 21h 00m 24s.xml">
       <configuration name="NotificationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NotificationTest - 2018.02.15 at 18h 14m 02s.xml">
-      <configuration name="NotificationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotificationTest - 2018.02.15 at 18h 29m 54s.xml">
-      <configuration name="NotificationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotificationTest - 2018.02.15 at 18h 30m 23s.xml">
-      <configuration name="NotificationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotificationTest - 2018.02.15 at 18h 38m 50s.xml">
-      <configuration name="NotificationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotificationTest - 2018.02.15 at 18h 40m 01s.xml">
-      <configuration name="NotificationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotificationTest - 2018.02.15 at 18h 50m 10s.xml">
-      <configuration name="NotificationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotificationTest - 2018.02.15 at 18h 55m 42s.xml">
-      <configuration name="NotificationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotificationTest - 2018.02.15 at 20h 54m 00s.xml">
-      <configuration name="NotificationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotificationTest_(1) - 2018.02.15 at 20h 54m 41s.xml">
+    <history-entry file="NotificationTest_(1) - 2018.02.19 at 21h 00m 31s.xml">
       <configuration name="NotificationTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotificationTest_(1) - 2018.02.19 at 21h 07m 42s.xml">
+      <configuration name="NotificationTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotificationTest_(1) - 2018.02.19 at 21h 23m 09s.xml">
+      <configuration name="NotificationTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotificationTest_(1) - 2018.02.19 at 21h 24m 58s.xml">
+      <configuration name="NotificationTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotificationTest_(1) - 2018.02.19 at 21h 25m 45s.xml">
+      <configuration name="NotificationTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotificationTest_(1) - 2018.02.19 at 21h 59m 57s.xml">
+      <configuration name="NotificationTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotificationTest_(1) - 2018.02.19 at 22h 26m 53s.xml">
+      <configuration name="NotificationTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotificationTest_noURLInputTest - 2018.02.19 at 21h 28m 20s.xml">
+      <configuration name="NotificationTest.noURLInputTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotificationTest_testPostXMLNotification - 2018.02.19 at 22h 02m 22s.xml">
+      <configuration name="NotificationTest.testPostXMLNotification" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="18" width="1347" height="688" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944834" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3100233" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3100233" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944834" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -742,7 +791,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1029,16 +1077,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/dtolabs/rundeck/plugin/notificationplugin/NotificationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="37" lean-forward="false" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dtolabs/rundeck/plugin/notificationplugin/Job.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1079,10 +1117,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/dtolabs/rundeck/plugin/notificationplugin/NotificationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dtolabs/rundeck/plugin/notificationplugin/ImplNotificationPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2618">
-          <caret line="154" column="29" lean-forward="false" selection-start-line="154" selection-start-column="29" selection-end-line="154" selection-end-column="29" />
+        <state relative-caret-position="1496">
+          <caret line="88" column="33" lean-forward="false" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

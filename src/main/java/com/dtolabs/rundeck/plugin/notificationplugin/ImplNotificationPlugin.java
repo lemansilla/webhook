@@ -22,6 +22,9 @@ import java.util.Map;
 //@PluginDescription(title="Notification Plugin", description="A Plugin for Rundeck Notifications.")
 public class ImplNotificationPlugin implements NotificationPlugin {
 
+    private static final String DEFAULT_METHOD = "POST";
+    private static final String DEFAULT_CONTENT = "XML";
+    private static final String DEFAULT_TIMEOUT = "3000"; //3 seconds
     /**
      * Interface method implementation
      * @param trigger event type causing notification
@@ -29,16 +32,22 @@ public class ImplNotificationPlugin implements NotificationPlugin {
      * @param config notification configuration
      * @return Boolean indicating success (true) or failure (false)
      */
-    public boolean postNotification(String trigger, Map executionData, Map config) {
+    public boolean postNotification(String trigger, Map executionData, Map config)  {
 
         String input = "";
         boolean bool = false;
+        String remoteURL = config.containsKey("url") ? (String)config.get("url") : null;
+        String method = config.containsKey("method") ? (String)config.get("method") : DEFAULT_METHOD;
+        String contentType = config.containsKey("content-type") ?
+                String.format("application/%s", config.get("content-type")) : DEFAULT_CONTENT;
+        String timeout = config.containsKey("timeout") ? (String)config.get("timeout") : DEFAULT_TIMEOUT;
 
         try {
-            URL url = new URL((String)config.get("url"));
+            URL url = new URL(remoteURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod((String)config.get("method"));
-            conn.setRequestProperty("Content-Type", String.format("application/%s", config.get("content-type")));
+            conn.setRequestMethod(method);
+            conn.setRequestProperty("Content-Type", contentType);
+            conn.setConnectTimeout(Integer.parseInt(timeout));
             conn.setDoOutput(true);  // Triggers POST
 
             NotificationModel notif = createNotificationObject(executionData);
@@ -57,30 +66,27 @@ public class ImplNotificationPlugin implements NotificationPlugin {
 
             if (conn.getResponseCode() == 200 || conn.getResponseCode() == 201) {
                 bool = true;
-                System.out.printf(">>>Notification was delivered:  %s OK\n", conn.getResponseCode());
+                System.out.printf("Notification Plugin Log: Notification was delivered,  %s OK\n", conn.getResponseCode());
             } else {
-                System.err.printf(">>>Server reply with error: %s\n", conn.getResponseCode());
+                System.err.printf("Notification Plugin Error: Server reply with error, %s\n", conn.getResponseCode());
                 System.err.println(conn.getResponseMessage());
             }
-            //The following assignment could create a NullPointerException
-            BufferedReader br = null;
-            try {
+            //Receive Response from server and -if necessary- print it to console
+            try (BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())))) {
                 String output;
-                br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
                 while ((output = br.readLine()) != null) {
                     System.out.println(output);
                 }
             } finally {
-                br.close();
                 conn.disconnect();
             }
 
         } catch (MalformedURLException ex) {
-            System.err.printf("URL error:  %s", ex);
+            System.err.printf("\nNotification Plugin Error (URL):  %s", ex);
         } catch (IOException ex) {
-            System.err.printf("Error during HTTP connection:  %s", ex);
+            System.err.printf("\nNotification Plugin Error (HTTP):  %s", ex);
         } catch (Exception ex) {
-            System.err.printf("Error:  %s", ex);
+            System.err.printf("\nNotification Plugin Error:  %s", ex);
         }
     return bool;
     }
@@ -145,6 +151,7 @@ public class ImplNotificationPlugin implements NotificationPlugin {
 
         } catch (JAXBException ex) {
             ex.printStackTrace();
+            System.err.printf("Notification Plugin Error (JABX):  %s", ex);
         }
     return xmlString;
     }

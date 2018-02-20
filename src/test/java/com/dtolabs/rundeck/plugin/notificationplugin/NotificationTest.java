@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 public class NotificationTest {
@@ -28,25 +29,25 @@ public class NotificationTest {
         return execData;
     }
         //This is a functional test of NotificationPlugin Class
-        @Test
-        public void testPostXMLNotification() {
+    @Test
+    public void testPostXMLNotification() {
 
-            String url = "http://httpbin.org/post";
-            String contentType = "xml";
-            String method = "POST";
+        String url = "http://httpbin.org/post";
+        String contentType = "xml";
+        String method = "POST";
 
-            //Create executionData and config
-            Map executionData = executionData();
-            Map<String, String> config = new HashMap<>();
-            config.put("url", url);
-            config.put("content-type", contentType);
-            config.put("method", method);
+        //Create executionData and config
+        Map executionData = executionData();
+        Map<String, String> config = new HashMap<>();
+        config.put("url", url);
+        config.put("content-type", contentType);
+        config.put("method", method);
 
-            //Test the implementation with the test data (including trigger)
-            NotificationPlugin notf = new ImplNotificationPlugin();
-            boolean result = notf.postNotification("onstart", executionData, config);
+        //Test the implementation with the test data (including trigger)
+        NotificationPlugin notf = new ImplNotificationPlugin();
+        boolean result = notf.postNotification("onstart", executionData, config);
 
-            assertTrue("Notification was delivered ", result);
+        assertTrue("Notification was not delivered ", result);
 
     }
     @Test
@@ -67,7 +68,8 @@ public class NotificationTest {
         NotificationPlugin notf = new ImplNotificationPlugin();
         boolean result = notf.postNotification("onstart", executionData, config);
 
-        assertTrue("Notification was delivered ", result);
+        assertTrue("Notification was not delivered ", result);
 
     }
+
 }
