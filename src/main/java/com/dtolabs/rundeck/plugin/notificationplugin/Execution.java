@@ -5,6 +5,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+/**
+ * Execution model
+ */
 @XmlRootElement
 @XmlType(propOrder = {"user", "datestarted", "job", "description"})
 public class Execution {

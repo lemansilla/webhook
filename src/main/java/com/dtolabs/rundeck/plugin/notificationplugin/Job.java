@@ -5,6 +5,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+/**
+ * Class model for JOB information
+ */
 @XmlRootElement
 @XmlType(propOrder = {"name", "group", "project", "description"})
 public class Job {

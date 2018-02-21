@@ -15,66 +15,94 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.Map;
 
+/**
+ * Main implementation of the plugin interface.
+ */
 //@Plugin(service="Notification",name="NotificationPlugin")
 //@PluginDescription(title="Notification Plugin", description="A Plugin for Rundeck Notifications.")
 public class ImplNotificationPlugin implements NotificationPlugin {
 
+    private static final String DEFAULT_METHOD = "POST";
+    private static final String DEFAULT_CONTENT = "xml";
+    private static final String DEFAULT_TIMEOUT = "3000"; //3 seconds
+    protected static String exception = "";
+    protected static Integer errorCode;
+    /**
+     * Interface method implementation
+     * @param trigger event type causing notification
+     * @param executionData execution data
+     * @param config notification configuration
+     * @return Boolean indicating success (true) or failure (false)
+     */
     public boolean postNotification(String trigger, Map executionData, Map config) {
 
-        String input = "";
+        String data = "";
         boolean bool = false;
+        String remoteURL = config.containsKey("url") ? (String)config.get("url") : null;
+        String method = config.containsKey("method") ? (String)config.get("method") : DEFAULT_METHOD;
+        String contentType = config.containsKey("content-type") ?
+                String.format("application/%s", config.get("content-type")) : String.format("application/%s", DEFAULT_CONTENT);
+        String timeout = config.containsKey("timeout") ? (String)config.get("timeout") : DEFAULT_TIMEOUT;
+
+        NotificationModel notif = createNotificationObject(executionData);
+        notif.setTrigger(trigger);
+
+        if (contentType.equals("application/json")) {
+            data = createJsonNotification(notif);
+        } else {
+            data = createXMLNotification(notif);
+        }
 
         try {
-            URL url = new URL((String)config.get("url"));
+            URL url = new URL(remoteURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod((String)config.get("method"));
-            conn.setRequestProperty("Content-Type", String.format("application/%s", config.get("content-type")));
-            conn.setDoOutput(true);  // Triggers POST
-
-            NotificationModel notif = createNotificationObject(executionData);
-            notif.setTrigger(trigger);
-
-            if (config.get("content-type").equals("json")) {
-                input = createJsonNotification(notif);
-            } else {
-                input = createXMLNotification(notif);
-            }
+            conn.setRequestProperty("Content-Type", contentType);
+            conn.setConnectTimeout(Integer.parseInt(timeout));
+            conn.setDoOutput(true);
+            conn.setRequestMethod(method);
 
             OutputStream wr = conn.getOutputStream();
-            wr.write(input.getBytes());
+            wr.write(data.getBytes());
             wr.flush();
             wr.close();
 
             if (conn.getResponseCode() == 200 || conn.getResponseCode() == 201) {
                 bool = true;
-                System.out.printf(">>>Notification was delivered:  %s OK\n", conn.getResponseCode());
-            } else {
-                System.err.printf(">>>Server reply with error: %s\n", conn.getResponseCode());
-                System.err.println(conn.getResponseMessage());
-            }
-            //The following assignment could create a NullPointerException
-            BufferedReader br = null;
-            try {
-                String output;
-                br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-                while ((output = br.readLine()) != null) {
-                    System.out.println(output);
+                System.out.printf("Notification Plugin Log: Notification was delivered,  %s OK\n", conn.getResponseCode());
+                //Receive Response from server and -if necessary- print it to console
+                try (BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())))) {
+                    String response;
+                    while ((response = br.readLine()) != null) {
+                        System.out.println(response);
+                    }
+                } finally {
+                    conn.disconnect();
                 }
-            } finally {
-                br.close();
+            } else {
+                System.err.printf("Notification Plugin Error: Server reply with error, %s\n", conn.getResponseCode());
+                System.err.println(conn.getResponseMessage());
+                errorCode = conn.getResponseCode();
+                conn.getInputStream();
                 conn.disconnect();
             }
 
         } catch (MalformedURLException ex) {
-            System.err.printf("URL error:  %s", ex);
+            System.err.printf("\nNotification Plugin Error (URL):  %s", ex);
+            exception = ex.getClass().getCanonicalName();
         } catch (IOException ex) {
-            System.err.printf("Error during HTTP connection:  %s", ex);
+            System.err.printf("\nNotification Plugin Error (HTTP):  %s", ex);
+            exception = ex.getClass().getCanonicalName();
         } catch (Exception ex) {
-            System.err.printf("Error:  %s", ex);
+            System.err.printf("\nNotification Plugin Error:  %s", ex);
         }
     return bool;
     }
 
+    /**
+     *
+     * @param execution - this correspond to the information about the Job and Execution for the notification
+     * @return This is the class model to be used in the XML and JSON generation
+     */
     private NotificationModel createNotificationObject(final Map<Object, String> execution) {
 
         Job job = new Job();
@@ -106,6 +134,11 @@ public class ImplNotificationPlugin implements NotificationPlugin {
         return notifModel;
     }
 
+    /**
+     * This method creates an XML String from the class notification model
+     * @param notifModel class model
+     * @return - XML String
+     */
     private String createXMLNotification(NotificationModel notifModel){
 
         String xmlString = "";
@@ -125,10 +158,16 @@ public class ImplNotificationPlugin implements NotificationPlugin {
 
         } catch (JAXBException ex) {
             ex.printStackTrace();
+            System.err.printf("Notification Plugin Error (JABX):  %s", ex);
         }
     return xmlString;
     }
 
+    /**
+     * This method creates a JSON String from the class notification model
+     * @param notifModel class model
+     * @return - JSON String|
+     */
     private String createJsonNotification(NotificationModel notifModel) {
 
         //String jsonString = "";

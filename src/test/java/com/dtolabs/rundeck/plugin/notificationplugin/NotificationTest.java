@@ -2,9 +2,13 @@ package com.dtolabs.rundeck.plugin.notificationplugin;
 
 import org.junit.Test;
 
+import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.dtolabs.rundeck.plugin.notificationplugin.ImplNotificationPlugin.errorCode;
+import static com.dtolabs.rundeck.plugin.notificationplugin.ImplNotificationPlugin.exception;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class NotificationTest {
@@ -27,30 +31,31 @@ public class NotificationTest {
 
         return execData;
     }
-        //This is a functional test of NotificationPlugin Class
-        @Test
-        public void testPostXMLNotification() {
 
-            String url = "http://httpbin.org/post";
-            String contentType = "xml";
-            String method = "POST";
-
-            //Create executionData and config
-            Map executionData = executionData();
-            Map<String, String> config = new HashMap<>();
-            config.put("url", url);
-            config.put("content-type", contentType);
-            config.put("method", method);
-
-            //Test the implementation with the test data (including trigger)
-            NotificationPlugin notf = new ImplNotificationPlugin();
-            boolean result = notf.postNotification("onstart", executionData, config);
-
-            assertTrue("Notification was delivered ", result);
-
-    }
+    //This is a functional test of NotificationPlugin Class
     @Test
-    public void testPostJsonNotification (){
+    public void postXMLNotificationSuccess() {
+
+        String url = "http://httpbin.org/post";
+        String contentType = "xml";
+        String method = "POST";
+
+        //Create executionData and config
+        Map executionData = executionData();
+        Map<String, String> config = new HashMap<>();
+        config.put("url", url);
+        config.put("content-type", contentType);
+        config.put("method", method);
+
+        //Test the implementation with the test data (including trigger)
+        NotificationPlugin notf = new ImplNotificationPlugin();
+        boolean result = notf.postNotification("onstart", executionData, config);
+
+        assertTrue("Notification was not delivered ", result);
+    }
+
+    @Test
+    public void postJsonNotificationSuccess() {
 
         String url = "http://httpbin.org/post";
         String contentType = "json";
@@ -67,7 +72,84 @@ public class NotificationTest {
         NotificationPlugin notf = new ImplNotificationPlugin();
         boolean result = notf.postNotification("onstart", executionData, config);
 
-        assertTrue("Notification was delivered ", result);
+        assertTrue("Notification was not delivered ", result);
 
+    }
+    //Test exception if empty url string
+    @Test
+    public void emptyURLInputErrorTest() throws MalformedURLException {
+
+        String url = "";
+        String contentType = "json";
+        String method = "POST";
+
+        //Create executionData and config
+        Map executionData = executionData();
+        Map<String, String> config = new HashMap<>();
+        config.put("url", url);
+        config.put("content-type", contentType);
+        config.put("method", method);
+
+        //Test the implementation with the test data (including trigger)
+        NotificationPlugin notf = new ImplNotificationPlugin();
+        boolean result = notf.postNotification("onstart", executionData, config);
+
+        assertEquals("java.net.MalformedURLException", exception);
+    }
+
+    // Test default method POST if not included as a parameter
+    @Test
+    public void noMethodInputUseDefaultTest() {
+        String url = "http://httpbin.org/post";
+        String contentType = "json";
+
+        //Create executionData and config
+        Map executionData = executionData();
+        Map<String, String> config = new HashMap<>();
+        config.put("url", url);
+        config.put("content-type", contentType);
+
+        //Test the implementation with the test data (including trigger)
+        NotificationPlugin notf = new ImplNotificationPlugin();
+        boolean result = notf.postNotification("onstart", executionData, config);
+        assertTrue("Notification was not delivered ", result);
+    }
+
+    // Test default content-type XML if not included as a parameter
+    @Test
+    public void noContentTypeInputUseDefaultTest() {
+        String url = "http://httpbin.org/post";
+        String method = "POST";
+
+        //Create executionData and config
+        Map executionData = executionData();
+        Map<String, String> config = new HashMap<>();
+        config.put("url", url);
+        config.put("method", method);
+
+        //Test the implementation with the test data (including trigger)
+        NotificationPlugin notf = new ImplNotificationPlugin();
+        boolean result = notf.postNotification("onstart", executionData, config);
+        assertTrue("Notification was not delivered ", result);
+    }
+
+    @Test
+    public void serverResponseErrorTest() throws Exception {
+
+        String url = "http://httpbin.org";
+        String contentType = "json";
+        String method = "POST";
+
+        //Create executionData and config
+        Map executionData = executionData();
+        Map<String, String> config = new HashMap<>();
+        config.put("url", url);
+        config.put("content-type", contentType);
+        config.put("method", method);
+
+        //Test the implementation with the test data (including trigger)
+        NotificationPlugin notf = new ImplNotificationPlugin();
+        boolean result = notf.postNotification("onstart", executionData, config);
+        assertTrue("Check HTTP response code", errorCode >= 300);
     }
 }

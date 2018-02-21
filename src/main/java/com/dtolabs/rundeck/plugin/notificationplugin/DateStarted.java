@@ -1,7 +1,9 @@
 package com.dtolabs.rundeck.plugin.notificationplugin;
 
-import java.util.Date;
 
+/**
+ * Date information to be included in the notification
+ */
 public class DateStarted {
 
     private String date;
