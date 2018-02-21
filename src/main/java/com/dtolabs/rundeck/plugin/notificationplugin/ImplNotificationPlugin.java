@@ -38,6 +38,9 @@ public class ImplNotificationPlugin implements NotificationPlugin {
 
         String data = "";
         boolean bool = false;
+        if (executionData.isEmpty() || config.isEmpty()) {
+            throw new IllegalArgumentException("\nNotification Plugin Error: Map data argument is empty");
+        }
         String remoteURL = config.containsKey("url") ? (String)config.get("url") : null;
         String method = config.containsKey("method") ? (String)config.get("method") : DEFAULT_METHOD;
         String contentType = config.containsKey("content-type") ?
@@ -55,6 +58,9 @@ public class ImplNotificationPlugin implements NotificationPlugin {
 
         try {
             URL url = new URL(remoteURL);
+            if (!url.getProtocol().startsWith("http")) {
+                throw new IllegalArgumentException("\nNotification Plugin Error: Not an http(s) url, " + url);
+            }
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestProperty("Content-Type", contentType);
             conn.setConnectTimeout(Integer.parseInt(timeout));

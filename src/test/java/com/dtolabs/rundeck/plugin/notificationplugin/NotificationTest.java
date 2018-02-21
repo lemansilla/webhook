@@ -149,7 +149,26 @@ public class NotificationTest {
 
         //Test the implementation with the test data (including trigger)
         NotificationPlugin notf = new ImplNotificationPlugin();
-        boolean result = notf.postNotification("onstart", executionData, config);
+        boolean result = notf.postNotification("onsuccess", executionData, config);
         assertTrue("Check HTTP response code", errorCode >= 300);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void emptyMapArgumentErrorTest() {
+
+        String url = "http://httpbin.org/post";
+        String contentType = "json";
+        String method = "POST";
+
+        //Create executionData and config
+        Map<String, String> executionData = new HashMap<>();
+        Map<String, String> config = new HashMap<>();
+        config.put("url", url);
+        config.put("content-type", contentType);
+        config.put("method", method);
+
+        //Test the implementation with the test data (including trigger)
+        NotificationPlugin notf = new ImplNotificationPlugin();
+        boolean result = notf.postNotification("onfailure", executionData, config);
     }
 }
