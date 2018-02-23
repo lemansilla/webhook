@@ -171,4 +171,22 @@ public class NotificationTest {
         NotificationPlugin notf = new ImplNotificationPlugin();
         boolean result = notf.postNotification("onfailure", executionData, config);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void noURLInDataErrorTest() {
+
+        String contentType = "xml";
+        String method = "POST";
+
+        //Create executionData and config
+        Map executionData = executionData();
+        Map<String, String> config = new HashMap<>();
+        config.put("content-type", contentType);
+        config.put("method", method);
+
+        //Test the implementation with the test data (including trigger)
+        NotificationPlugin notf = new ImplNotificationPlugin();
+        boolean result = notf.postNotification("onfailure", executionData, config);
+    }
+
 }

@@ -41,7 +41,10 @@ public class ImplNotificationPlugin implements NotificationPlugin {
         if (executionData.isEmpty() || config.isEmpty()) {
             throw new IllegalArgumentException("\nNotification Plugin Error: Map data argument is empty");
         }
-        String remoteURL = config.containsKey("url") ? (String)config.get("url") : null;
+        if (!config.containsKey("url")) {
+             throw new IllegalArgumentException("\nNotification Plugin Error: No URL in data");
+        }
+        String remoteURL = (String)config.get("url");
         String method = config.containsKey("method") ? (String)config.get("method") : DEFAULT_METHOD;
         String contentType = config.containsKey("content-type") ?
                 String.format("application/%s", config.get("content-type")) : String.format("application/%s", DEFAULT_CONTENT);
